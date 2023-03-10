@@ -7,7 +7,8 @@ const common = `
     --require progress-bar
     --require package.json  
     --require playwright.config.js  
-    --publish-quiet  
+    --publish-quiet 
+     
     --format @cucumber/pretty-formatter
     --format json:report_cucumber/cucumber-html-report.json
     --format html:report_cucumber/cucumber-html-report.html     
