@@ -14,5 +14,5 @@ const common = `
     `
 
 module.exports = {
-  default: `${common} features/orangehrm/**/*.feature`,
+  default: `${common} features/**/*.feature`,
   }
