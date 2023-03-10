@@ -14,6 +14,6 @@ const common = `
     `
 
 module.exports = {
-  //default: `${common} features/**/*.feature`,
-  default: `${common} features/BaiscAuthentication.feature`,
+  default: `${common} features/**/*.feature`,
+  //default: `${common} features/BaiscAuthentication.feature`,
 }
