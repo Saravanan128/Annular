@@ -33,13 +33,16 @@ Then('he performs action on multiwindow', async () => {
   const Input=await newWindow.locator("//a[text()='Edit']").click();
   const Name=await newWindow.locator("//input[@id='fullName']").fill("annular");
  // await newWindow.close();//closes table tab
- await newWindow.goBack();
+ await newWindow.goBack();//goes to button page
  const pratise=await newWindow.locator("//h1[contains(text(),'Practice and become pro')]");
  expect(pratise).to.exist;
  //const Multi_Select=await newWindow.locator("").click();
 
  //await newWindow.backButton.click();
- // await newWindow.bringToFront();//bring homepage to front
+  await page.bringToFront();//bring homepage to front
+  const HomePageUrl=await newWindow.url();
+  console.log(HomePageUrl);
+  const MultipleWindow=await newWindow.locator("//button[text()='Muiltiple windows']").click();
   //await newWindow.waitForTimeout(3000);
 });
 
