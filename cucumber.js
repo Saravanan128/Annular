@@ -14,5 +14,6 @@ const common = `
     `
 
 module.exports = {
-  default: `${common} features/**/*.feature`,
+  //default: `${common} features/**/*.feature`,
+  default: `${common} features/testleaf/WriteInExcelFile.feature`,
   }

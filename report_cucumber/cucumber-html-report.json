@@ -1,1 +1,88 @@
-[]
+[
+  {
+    "description": "  RegSuite 1 tc120RLZ32851",
+    "elements": [
+      {
+        "description": "",
+        "id": "user-writes-values-in-excel-file;user-writes-values-in-excel-file",
+        "keyword": "Scenario Outline",
+        "line": 7,
+        "name": "User Writes Values In Excel File",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1064598500
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 8,
+            "name": "User navigates to TestLeaf dashboard page",
+            "match": {
+              "location": "step-definitions\\tc120RLZ32851.step.js:45"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2777708400
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "User Write Values In Excel File",
+            "match": {
+              "location": "step-definitions\\tc120RLZ32851.step.js:436"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1643152800
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 509504199
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 311728199
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@Write_In_Excel_File",
+            "line": 1
+          },
+          {
+            "name": "@Write_In_Excel_File",
+            "line": 6
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "user-writes-values-in-excel-file",
+    "line": 2,
+    "keyword": "Feature",
+    "name": "User Writes Values In Excel File",
+    "tags": [
+      {
+        "name": "@Write_In_Excel_File",
+        "line": 1
+      }
+    ],
+    "uri": "features\\testleaf\\WriteInExcelFile.feature"
+  }
+]

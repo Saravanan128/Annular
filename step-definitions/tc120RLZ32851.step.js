@@ -96,7 +96,7 @@ const data = {
 const jsonData = JSON.stringify(data, null, 2);//null->no additional options r specified,2->no of indentataion(white space or tabs)
 
 // Write the JSON data to a file
-writeFile('D:/workspace/workspace1/config/data.json', jsonData , (error) => 
+writeFile('../config/data.json', jsonData , (error) => 
 {
 //if (error) throw error;
   console.log('Data written to file!');
@@ -418,7 +418,7 @@ Then('User Read Values From Excel', async () => {
   // const Misc=await page.locator("//i[@class='pi pi-circle-off layout-menuitem-icon']").click();
   // const file=await page.locator("//i[@class='pi pi-fw pi-file layout-menuitem-icon']").click();
   const workbook = new ExcelJS.Workbook();
-  await workbook.xlsx.readFile('D:/workspace/workspace1/config/datasheet.xlsx');
+  await workbook.xlsx.readFile('../config/datasheet.xlsx');
   const worksheet = workbook.getWorksheet('Sheet2');
     const cell = worksheet.getCell(7,4);
   const value = cell.value;
@@ -445,7 +445,7 @@ Then('User Write Values In Excel File', async () => {
   worksheet.addRow([6, 'Annular', 'Francis']);
   worksheet.addRow([7, 'Annular', 'Kalai']);
   worksheet.addRow([8, 'Annular', 'Kanishka']);
-  await workbook.xlsx.writeFile('D:/workspace/workspace1/config/datasheet.xlsx');
+  await workbook.xlsx.writeFile('../config/datasheet.xlsx');
   const ReturnToDashboard = await page.locator("//div[@class='layout-topbar']/a[1]").click();
 });
 
@@ -544,7 +544,7 @@ Then('User Uploads File into the page', async () => {
   const Misc = await page.locator("//i[@class='pi pi-circle-off layout-menuitem-icon']").click();
   const file = await page.locator("//li[@id='menuform:m_file']").click();
 
-  await page.locator("(//input[@type='file'])[1]").setInputFiles(["D:/workspace/workspace1/config/ppple.txt"]);
+  await page.locator("(//input[@type='file'])[1]").setInputFiles(["../config/ppple.txt"]);
   //OR
   //await page.setInputFiles("(//input[@type='file'])[1]", ["Desktop/ppple.txt"])
 
@@ -571,7 +571,7 @@ Then('User Downloads File from the page', async () => {
   console.log(path);
   const fileName = download[0].suggestedFilename();
   //await download[0].saveAs(fileName);
-  await download[0].saveAs('D:/workspace/workspace1/reports/Downloads/TestLeaf Logo.png');
+  await download[0].saveAs('../reports/Downloads/TestLeaf Logo.png');
   const ReturnToDashboard = await page.locator("//div[@class='layout-topbar']/a[1]").click();
 
 });
