@@ -2,7 +2,7 @@
 Feature: User Handles All Types Of Alerts
 
   RegSuite 1 tc120RLZ32851
-  
+
   @Alert_Box_Handling
   Scenario: User Handles All Types Of Alerts
     Given User navigates to TestLeaf dashboard page
