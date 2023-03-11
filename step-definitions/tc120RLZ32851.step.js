@@ -418,7 +418,7 @@ Then('User Read Values From Excel', async () => {
   // const Misc=await page.locator("//i[@class='pi pi-circle-off layout-menuitem-icon']").click();
   // const file=await page.locator("//i[@class='pi pi-fw pi-file layout-menuitem-icon']").click();
   const workbook = new ExcelJS.Workbook();
-  await workbook.xlsx.readFile('../config/datasheet.xlsx');
+  await workbook.xlsx.readFile('config/datasheet.xlsx');
   const worksheet = workbook.getWorksheet('Sheet2');
     const cell = worksheet.getCell(7,4);
   const value = cell.value;
@@ -445,7 +445,7 @@ Then('User Write Values In Excel File', async () => {
   worksheet.addRow([6, 'Annular', 'Francis']);
   worksheet.addRow([7, 'Annular', 'Kalai']);
   worksheet.addRow([8, 'Annular', 'Kanishka']);
-  await workbook.xlsx.writeFile('../config/datasheet.xlsx');
+  await workbook.xlsx.writeFile('config/datasheet.xlsx');
   const ReturnToDashboard = await page.locator("//div[@class='layout-topbar']/a[1]").click();
 });
 
@@ -544,7 +544,7 @@ Then('User Uploads File into the page', async () => {
   const Misc = await page.locator("//i[@class='pi pi-circle-off layout-menuitem-icon']").click();
   const file = await page.locator("//li[@id='menuform:m_file']").click();
 
-  await page.locator("(//input[@type='file'])[1]").setInputFiles(["../config/ppple.txt"]);
+  await page.locator("(//input[@type='file'])[1]").setInputFiles(["config/ppple.txt"]);
   //OR
   //await page.setInputFiles("(//input[@type='file'])[1]", ["Desktop/ppple.txt"])
 
