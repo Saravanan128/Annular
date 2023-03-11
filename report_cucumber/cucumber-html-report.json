@@ -1,46 +1,46 @@
 [
   {
-    "description": "  RegSuite 1 tc120RLZ32851",
+    "description": "",
     "elements": [
       {
         "description": "",
-        "id": "user-writes-values-in-excel-file;user-writes-values-in-excel-file",
-        "keyword": "Scenario Outline",
+        "id": "user-handles-window-handling;user-handles-window-handling",
+        "keyword": "Scenario",
         "line": 7,
-        "name": "User Writes Values In Excel File",
+        "name": "User Handles Window Handling",
         "steps": [
           {
             "keyword": "Before",
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 791388000
+              "duration": 898845799
             }
           },
           {
             "arguments": [],
             "keyword": "Given ",
             "line": 8,
-            "name": "User navigates to TestLeaf dashboard page",
+            "name": "User navigates to LetsCode WindowHandling Page",
             "match": {
-              "location": "step-definitions\\tc120RLZ32851.step.js:45"
+              "location": "step-definitions\\tc120RLZ32851.step.js:18"
             },
             "result": {
               "status": "passed",
-              "duration": 6758486599
+              "duration": 5686659300
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
             "line": 9,
-            "name": "User Write Values In Excel File",
+            "name": "he performs action on multiwindow",
             "match": {
-              "location": "step-definitions\\tc120RLZ32851.step.js:436"
+              "location": "step-definitions\\tc120RLZ32851.step.js:23"
             },
             "result": {
               "status": "passed",
-              "duration": 1567142000
+              "duration": 10513212300
             }
           },
           {
@@ -48,7 +48,7 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 393578500
+              "duration": 1174881300
             }
           },
           {
@@ -56,33 +56,33 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 294631599
+              "duration": 334649300
             }
           }
         ],
         "tags": [
           {
-            "name": "@Write_In_Excel_File",
+            "name": "@Perform_Window_Handling",
             "line": 1
           },
           {
-            "name": "@Write_In_Excel_File",
+            "name": "@Perform_Window_Handling",
             "line": 6
           }
         ],
         "type": "scenario"
       }
     ],
-    "id": "user-writes-values-in-excel-file",
+    "id": "user-handles-window-handling",
     "line": 2,
     "keyword": "Feature",
-    "name": "User Writes Values In Excel File",
+    "name": "User Handles Window Handling",
     "tags": [
       {
-        "name": "@Write_In_Excel_File",
+        "name": "@Perform_Window_Handling",
         "line": 1
       }
     ],
-    "uri": "features\\testleaf\\WriteInExcelFile.feature"
+    "uri": "features\\testleaf\\LetsCodeWindowHandling.feature"
   }
 ]

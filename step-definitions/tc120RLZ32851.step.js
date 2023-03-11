@@ -15,6 +15,34 @@ setDefaultTimeout(timeout);
 const saavaspage = new SaavasPage()
 const encryptions = new Encryptions()
 
+Given('User navigates to LetsCode WindowHandling Page', async () => {
+  await saavaspage.LETS_CODE_MULTIWINDOW();
+  console.log('URL is navigated');
+});
+
+Then('he performs action on multiwindow', async () => {
+  const [newWindow] = await Promise.all([
+    context.waitForEvent("page"),
+    await page.click("//button[text()='Open Home Page']")
+  ])
+  await newWindow.waitForLoadState();
+  const PagesOpened=newWindow.context().pages();
+  console.log("No of tabs Opened are "+PagesOpened.length);
+  const text=await newWindow.locator("//h1[text()=' Practice and become pro in test automation']").textContent();
+  console.log(text);
+  const Input=await newWindow.locator("//a[text()='Edit']").click();
+  const Name=await newWindow.locator("//input[@id='fullName']").fill("annular");
+ // await newWindow.close();//closes table tab
+ await newWindow.goBack();
+ const pratise=await newWindow.locator("//h1[contains(text(),'Practice and become pro')]");
+ expect(pratise).to.exist;
+ //const Multi_Select=await newWindow.locator("").click();
+
+ //await newWindow.backButton.click();
+ // await newWindow.bringToFront();//bring homepage to front
+  //await newWindow.waitForTimeout(3000);
+});
+
 Given('User navigates to IRCTC Page', async () => {
   await saavaspage.IRCTC_BaseUrl();
   console.log('URL is navigated');

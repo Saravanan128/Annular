@@ -1,6 +1,9 @@
 const playwright = require('playwright')
 
 class SaavasPage {
+  async LETS_CODE_MULTIWINDOW() {
+    return await page.goto(global.LETS_CODE_WINDOW);
+  }
   async IRCTC_BaseUrl() {
     return await page.goto(global.IRCTC_URL);
   }
