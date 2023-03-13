@@ -1,46 +1,56 @@
 [
   {
-    "description": "  RegSuite 1 tc120RLZ32851",
+    "description": "",
     "elements": [
       {
         "description": "",
-        "id": "user-selects-all-checkboxes;user-selects-all-checkboxes",
+        "id": "user-handles-window-handling;user-handles-window-handling",
         "keyword": "Scenario",
         "line": 7,
-        "name": "User Selects All CheckBoxes",
+        "name": "User Handles Window Handling",
         "steps": [
           {
             "keyword": "Before",
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 807455899
+              "duration": 830330100
             }
           },
           {
             "arguments": [],
             "keyword": "Given ",
             "line": 8,
-            "name": "User navigates to TestLeaf dashboard page",
+            "name": "User navigates to LetsCode WindowHandling Page",
             "match": {
-              "location": "step-definitions\\tc120RLZ32851.step.js:76"
+              "location": "step-definitions\\tc120RLZ32851.step.js:18"
             },
             "result": {
               "status": "passed",
-              "duration": 2319153300
+              "duration": 4537067800
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
             "line": 9,
-            "name": "User Selects All CheckBoxes 1 by1",
+            "name": "he performs action on multiwindow",
             "match": {
-              "location": "step-definitions\\tc120RLZ32851.step.js:511"
+              "location": "step-definitions\\tc120RLZ32851.step.js:23"
             },
             "result": {
-              "status": "passed",
-              "duration": 4643209000
+              "status": "failed",
+              "duration": 19325723500,
+              "error_message": "locator.click: Target closed\n=========================== logs ===========================\nwaiting for locator('xpath=//button[text()=\\'Muiltiple windows\\']')\n============================================================\n    at World.<anonymous> (D:\\workspace\\WorkSpace4\\Workspace5\\Annular\\step-definitions\\tc120RLZ32851.step.js:49:88)"
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "failed",
+              "duration": 4900400,
+              "error_message": "page.screenshot: Target page, context or browser has been closed\n    at World.<anonymous> (D:\\workspace\\WorkSpace4\\Workspace5\\Annular\\setup\\hooks.js:51:35)"
             }
           },
           {
@@ -48,41 +58,33 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 381801199
-            }
-          },
-          {
-            "keyword": "After",
-            "hidden": true,
-            "result": {
-              "status": "passed",
-              "duration": 114400700
+              "duration": 20769399
             }
           }
         ],
         "tags": [
           {
-            "name": "@User_Selects_All_CheckBoxes",
+            "name": "@Perform_Window_Handling",
             "line": 1
           },
           {
-            "name": "@User_Selects_All_CheckBoxes",
+            "name": "@Perform_Window_Handling",
             "line": 6
           }
         ],
         "type": "scenario"
       }
     ],
-    "id": "user-selects-all-checkboxes",
+    "id": "user-handles-window-handling",
     "line": 2,
     "keyword": "Feature",
-    "name": "User Selects All CheckBoxes",
+    "name": "User Handles Window Handling",
     "tags": [
       {
-        "name": "@User_Selects_All_CheckBoxes",
+        "name": "@Perform_Window_Handling",
         "line": 1
       }
     ],
-    "uri": "features\\testleaf\\SelectAllCheckBox.feature"
+    "uri": "features\\testleaf\\LetsCodeWindowHandling.feature"
   }
 ]

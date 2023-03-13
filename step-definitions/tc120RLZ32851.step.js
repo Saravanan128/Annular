@@ -34,6 +34,10 @@ Then('he performs action on multiwindow', async () => {
   const Name=await newWindow.locator("//input[@id='fullName']").fill("annular");
  // await newWindow.close();//closes table tab
  await newWindow.goBack();//goes to button page
+ const Button=await newWindow.locator("//a[text()='Click']").click();
+ const GotoHome=await newWindow.locator("//button[text()='Goto Home']").click();
+ 
+
  const pratise=await newWindow.locator("//h1[contains(text(),'Practice and become pro')]");
  expect(pratise).to.exist;
  //const Multi_Select=await newWindow.locator("").click();
@@ -50,6 +54,7 @@ Given('User navigates to IRCTC Page', async () => {
   await saavaspage.IRCTC_BaseUrl();
   console.log('URL is navigated');
 });
+
 Then('Checks for Duplicate Values in ListBox', async () => {
   const Element = await page.locator("//i[@class='pi pi-server layout-menuitem-icon']").click();
   const dropdownOption = await page.locator("//i[@class='pi pi-fw pi-chevron-down layout-menuitem-icon']").click();
