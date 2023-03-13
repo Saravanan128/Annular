@@ -512,9 +512,12 @@ Then('User Selects All CheckBoxes 1 by1', async () => {
 
   const CheckBoxes = await page.$$("//div[@class='ui-chkbox-box ui-widget ui-corner-all ui-state-default']");
 
-  for (const CheckBox of CheckBoxes) {
-    console.log(await CheckBox.click());
+  for (let i = 0; i < CheckBoxes.length; i += 2) { // iterate over every other checkbox
+    await CheckBoxes[i].click(); // click the checkbox
   }
+  // for (const CheckBox of CheckBoxes) {
+  //   console.log(await CheckBox.click());
+  // }
 });
 
 Then('Handle DropDown', async () => {

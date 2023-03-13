@@ -15,5 +15,5 @@ const common = `
 
 module.exports = {
   //default: `${common} features/**/*.feature`,
-  default: `${common} features/testleaf/LetsCodeWindowHandling.feature`,
+  default: `${common} features/testleaf/SelectAllCheckBox.feature`,
   }
