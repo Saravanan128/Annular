@@ -1,3 +1,8 @@
+// const fs=require('fs');
+// let date=new Date().toUTCString();
+// const dir=`report_cucumber/${date}`;
+// fs.mkdirSync(dir , { recursive:true });
+
 const common = `
     --require setup/assertions.js
     --require setup/hooks.js
@@ -15,5 +20,5 @@ const common = `
 
 module.exports = {
   //default: `${common} features/**/*.feature`,
-  default: `${common} features/testleaf/LetsCodeWindowHandling.feature`,
+  default: `${common} features/testleaf/TextBox.feature`,
   }

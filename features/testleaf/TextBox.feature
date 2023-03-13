@@ -6,9 +6,9 @@ Feature: User Handles TextBox
   @UserHandleTextBox
   Scenario Outline: User Handles TextBox
     Given User navigates to TestLeaf dashboard page
-     Then User Enters "<UserName>" in Name TextFeild
-     Then User Appends "<Country>" to City TextFeild
-     Then User Checks Whether CheckBox Is Disabled Or Not
+      Then User Enters "<UserName>" in Name TextFeild 
+      Then User Appends "<Country>" to City TextFeild
+      Then User Checks Whether CheckBox Is Disabled Or Not
      Then User Clears The Text in the TextBox
     Then User Reterives The Text In The TextBox
      Then User Enters "<SliderValue>" and Check Slider Moves Accordingly Or not

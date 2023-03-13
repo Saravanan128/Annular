@@ -1,47 +1,138 @@
 [
   {
-    "description": "",
+    "description": "  RegSuite 1 tc120RLZ32851",
     "elements": [
       {
         "description": "",
-        "id": "user-handles-window-handling;user-handles-window-handling",
-        "keyword": "Scenario",
-        "line": 7,
-        "name": "User Handles Window Handling",
+        "id": "user-handles-textbox;user-handles-textbox",
+        "keyword": "Scenario Outline",
+        "line": 23,
+        "name": "User Handles TextBox",
         "steps": [
           {
             "keyword": "Before",
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 830330100
+              "duration": 938748399
             }
           },
           {
             "arguments": [],
             "keyword": "Given ",
             "line": 8,
-            "name": "User navigates to LetsCode WindowHandling Page",
+            "name": "User navigates to TestLeaf dashboard page",
             "match": {
-              "location": "step-definitions\\tc120RLZ32851.step.js:18"
+              "location": "step-definitions\\tc120RLZ32851.step.js:92"
             },
             "result": {
               "status": "passed",
-              "duration": 4537067800
+              "duration": 2733841799
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
             "line": 9,
-            "name": "he performs action on multiwindow",
+            "name": "User Enters \"UserName\" in Name TextFeild",
             "match": {
-              "location": "step-definitions\\tc120RLZ32851.step.js:23"
+              "location": "step-definitions\\tc120RLZ32851.step.js:218"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3799149199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 10,
+            "name": "User Appends \"Country\" to City TextFeild",
+            "match": {
+              "location": "step-definitions\\tc120RLZ32851.step.js:230"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2232462599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 11,
+            "name": "User Checks Whether CheckBox Is Disabled Or Not",
+            "match": {
+              "location": "step-definitions\\tc120RLZ32851.step.js:235"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1048420599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 12,
+            "name": "User Clears The Text in the TextBox",
+            "match": {
+              "location": "step-definitions\\tc120RLZ32851.step.js:239"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1165521899
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 13,
+            "name": "User Reterives The Text In The TextBox",
+            "match": {
+              "location": "step-definitions\\tc120RLZ32851.step.js:245"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 54376200
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 14,
+            "name": "User Enters \"SliderValue\" and Check Slider Moves Accordingly Or not",
+            "match": {
+              "location": "step-definitions\\tc120RLZ32851.step.js:252"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2152789600
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 15,
+            "name": "User Enters Paragragh in Custom ToolBar and Converts Text into Bold",
+            "match": {
+              "location": "step-definitions\\tc120RLZ32851.step.js:266"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4654677599
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 16,
+            "name": "User Enters \"Name1\",\"Name2\",\"Name3\" and select 5,6,7th option and delete it",
+            "match": {
+              "location": "step-definitions\\tc120RLZ32851.step.js:274"
             },
             "result": {
               "status": "failed",
-              "duration": 19325723500,
-              "error_message": "locator.click: Target closed\n=========================== logs ===========================\nwaiting for locator('xpath=//button[text()=\\'Muiltiple windows\\']')\n============================================================\n    at World.<anonymous> (D:\\workspace\\WorkSpace4\\Workspace5\\Annular\\step-definitions\\tc120RLZ32851.step.js:49:88)"
+              "duration": 5746799,
+              "error_message": "locator.click: Target page, context or browser has been closed\n    at SaavasPage.TestLeafElementIcon (D:\\workspace\\WorkSpace4\\Workspace5\\Annular\\page-objects\\tc120RLZ32851_page.js:60:38)\n    at World.<anonymous> (D:\\workspace\\WorkSpace4\\Workspace5\\Annular\\step-definitions\\tc120RLZ32851.step.js:275:20)"
             }
           },
           {
@@ -49,7 +140,7 @@
             "hidden": true,
             "result": {
               "status": "failed",
-              "duration": 4900400,
+              "duration": 5571400,
               "error_message": "page.screenshot: Target page, context or browser has been closed\n    at World.<anonymous> (D:\\workspace\\WorkSpace4\\Workspace5\\Annular\\setup\\hooks.js:51:35)"
             }
           },
@@ -58,33 +149,33 @@
             "hidden": true,
             "result": {
               "status": "passed",
-              "duration": 20769399
+              "duration": 154983600
             }
           }
         ],
         "tags": [
           {
-            "name": "@Perform_Window_Handling",
+            "name": "@UserHandleTextBox",
             "line": 1
           },
           {
-            "name": "@Perform_Window_Handling",
+            "name": "@UserHandleTextBox",
             "line": 6
           }
         ],
         "type": "scenario"
       }
     ],
-    "id": "user-handles-window-handling",
+    "id": "user-handles-textbox",
     "line": 2,
     "keyword": "Feature",
-    "name": "User Handles Window Handling",
+    "name": "User Handles TextBox",
     "tags": [
       {
-        "name": "@Perform_Window_Handling",
+        "name": "@UserHandleTextBox",
         "line": 1
       }
     ],
-    "uri": "features\\testleaf\\LetsCodeWindowHandling.feature"
+    "uri": "features\\testleaf\\TextBox.feature"
   }
 ]

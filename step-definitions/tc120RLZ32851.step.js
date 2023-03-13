@@ -15,6 +15,15 @@ setDefaultTimeout(timeout);
 const saavaspage = new SaavasPage()
 const encryptions = new Encryptions()
 
+
+Given('User navigates to w3schools Horizontal NavBar Page', async () => {
+  await saavaspage.Actitime_BaseUrl();
+  console.log('URL is navigated to Actitime Page');
+});
+Then('Handles Horizontal ScrollBar', async () => {
+  const frame = await page.frame({ name: 'iframeResult' });//
+
+});
 Given('User navigates to LetsCode WindowHandling Page', async () => {
   await saavaspage.LETS_CODE_MULTIWINDOW();
   console.log('URL is navigated');
@@ -35,11 +44,13 @@ Then('he performs action on multiwindow', async () => {
  // await newWindow.close();//closes table tab
  await newWindow.goBack();//goes to button page
  const Button=await newWindow.locator("//a[text()='Click']").click();
- const GotoHome=await newWindow.locator("//button[text()='Goto Home']").click();
+ //await newWindow.goFront();
+ //const GotoHome=await newWindow.locator("//button[text()='Goto Home']").click();
  
-
- const pratise=await newWindow.locator("//h1[contains(text(),'Practice and become pro')]");
- expect(pratise).to.exist;
+ const Insights=await newWindow.locator("//p[contains(text(),'Insights on software testing videos like Selenium, Protractor, Playwright, Cypress & WebDriver IO')]");
+ expect(Insights).to.exist;
+//  const pratise=await newWindow.locator("//h1[contains(text(),'Practice and become pro')]");
+//  expect(pratise).to.exist;
  //const Multi_Select=await newWindow.locator("").click();
 
  //await newWindow.backButton.click();
@@ -112,9 +123,9 @@ Then('Selects the Elements one by one', async () => {
 //await selenium.click();
 
 await page.keyboard.press('Control');
-await page.click("//h3[text()='Selenium']");
-await page.click("//h3[text()='Protractor']");
-await page.click("//h3[text()='Appium']");
+await page.locator("//h3[text()='Selenium']").click();
+await page.locator("//h3[text()='Protractor']").click();
+await page.locator("//h3[text()='Appium']").click();
 await page.keyboard.up('Control');
 
 });
@@ -123,16 +134,16 @@ Then('User Checks Whether he able to write data in json file', async () => {
   
 // Create an object to write to the file
 const data = {
-  name: 'John Doe',
-  age: 30,
-  email: 'john.doe@example.com'
+  CompanyName: 'Annular',
+  No_of_Employes:100,
+  email: 'Annular.doe@example.com'
 };
 
 // Convert the object to a JSON string
 const jsonData = JSON.stringify(data, null, 2);//null->no additional options r specified,2->no of indentataion(white space or tabs)
 
 // Write the JSON data to a file
-writeFile('../config/data.json', jsonData , (error) => 
+writeFile('config/Test.json', jsonData , (error) => 
 {
 //if (error) throw error;
   console.log('Data written to file!');
@@ -205,8 +216,13 @@ Then('User Handle Sweet Alert', async () => {
   //p[contains(text(),'You have clicked and open a dialog that can be inspectable')]
 });
 Then('User Enters {string} in Name TextFeild', async (credential1) => {
-  const Element = await page.locator("//i[@class='pi pi-server layout-menuitem-icon']").click();
-  const TextBox = await page.locator("(//i[@class='pi pi-fw pi-check-square layout-menuitem-icon'])[1]").click();
+  
+  await saavaspage.TestLeafElementIcon();
+  await saavaspage.TestLeafTestBoxIcon(); 
+ 
+  
+  //const Element = await page.locator("//i[@class='pi pi-server layout-menuitem-icon']").click();
+  //const TextBox = await page.locator("(//i[@class='pi pi-fw pi-check-square layout-menuitem-icon'])[1]").click();
   const Username = data[credential1];
   await saavaspage.TestLeafEnterUserName(Username);
 });
@@ -256,10 +272,9 @@ Then('User Enters Paragragh in Custom ToolBar and Converts Text into Bold', asyn
 });
 
 Then('User Enters {string},{string},{string} and select 5,6,7th option and delete it', async (Favourite1,Favourite2,Favourite3) => {
-  const Element = await page.locator("//i[@class='pi pi-server layout-menuitem-icon']").click();
-  const TextBox = await page.locator("(//i[@class='pi pi-fw pi-check-square layout-menuitem-icon'])[1]").click();
- 
-  const Name1=data[Favourite1];
+  await saavaspage.TestLeafElementIcon();
+  await saavaspage.TestLeafTestBoxIcon();
+ const Name1=data[Favourite1];
   await saavaspage.EnterName1(Name1);
   const dropdown=await page.locator("//span[@class='ui-button-icon-primary ui-icon ui-icon-triangle-1-s']").click();
   const select5thOption=await page.locator("//span[@id='j_idt106:auto-complete_panel']/ul/li[6]").click();
@@ -272,8 +287,9 @@ Then('User Enters {string},{string},{string} and select 5,6,7th option and delet
   const dropdown2=await page.locator("//span[@class='ui-button-icon-primary ui-icon ui-icon-triangle-1-s']").click();
   const select7thOption=await page.locator("//span[@id='j_idt106:auto-complete_panel']/ul/li[8]").click();
   const Delete7thOption=await page.locator("(//span[@class='ui-autocomplete-token-icon ui-icon ui-icon-close'])[3]").click();
- 
+
   const ReturnToDashboard = await page.locator("//div[@class='layout-topbar']/a[1]").click();
+  
 });
 
 Then('User Gets Tooltip Text', async () => {
@@ -293,8 +309,9 @@ Then('User Gets Tooltip Text', async () => {
 });
 
 Then('User Checks Whether Link Is Broken Or Not', async () => {
-  const Element = await page.locator("//i[@class='pi pi-server layout-menuitem-icon']").click();
-  const HyperLinks=await page.locator("//i[@class='pi pi-fw pi-link layout-menuitem-icon']").click();
+  await saavaspage.TestLeafElementIcon();
+  await saavaspage.TestLeafHyperLinkIcon();
+  
   const link = await page.$("//a[text()='Broken?']");
   const href = await link.getAttribute('href');
 
@@ -311,9 +328,22 @@ Then('User Checks Whether Link Is Broken Or Not', async () => {
 
 
 Then('Scroll Upto a Particular Element', async () => {
-  const signin = await page.$("//label[text()='2022 - All Rights Reserved']");
-  expect(signin).to.exist;
-  await signin.scrollIntoViewIfNeeded();
+  // Check if the page has a vertical scrollbar
+const hasVerticalScrollbar = await page.evaluate(() => {
+  const { scrollHeight, clientHeight } = document.documentElement;
+  return scrollHeight > clientHeight;
+});
+
+// Assert whether a vertical scrollbar is present or not
+expect(hasVerticalScrollbar).to.be.true; // or false
+
+
+
+
+//   const signin = await page.$("//span[text()='Data Table']");
+//   expect(signin).to.exist;
+//   const scroll=await signin.scrollIntoViewIfNeeded();
+//  console.log(scroll);
   const ReturnToDashboard = await page.locator("//div[@class='layout-topbar']/a[1]").click();
 });
 Then('Click and Drag Element To Left', async () => {
@@ -339,15 +369,31 @@ Then('User Handles Slider Operation', async () => {
   const elementHandle = await page.locator("(//span[@tabindex=0])[1]").click();
   //const result=expect(elementHandle).to.exist();
  
+  const slider1 = page.locator("//h5[text()='Draggable Rows']/following::table[@role='grid']/tbody/tr/td[text()='Bamboo Watch']");
+  const targetLocator = page.locator("//h5[text()='Draggable Rows']/following::table[@role='grid']/tbody/tr/td[text()='Gaming Set']");
+  const slider1BoundingBox = await slider1.boundingBox();//gets x,y co-ordinates and width and height 
+  const targetBoundingBox = await targetLocator.boundingBox();
+  const sourceX = slider1BoundingBox.x + slider1BoundingBox.width / 2;//gets x-coordinate and width/2 means it moves to center 
+  const sourceY = slider1BoundingBox.y + slider1BoundingBox.height / 2;//gets y-coordinate and height/2 means it moves to center
+  const targetX = targetBoundingBox.x + targetBoundingBox.width / 2;//gets x-coordinate and width/2 means it moves to center
+  const targetY = targetBoundingBox.y + targetBoundingBox.height / 2;
+  await page.mouse.move(sourceX, sourceY);//from->moving src 
+  await page.mouse.down();
+  await page.mouse.move(targetX, targetY);//to target->
+  await page.mouse.up();
+
+
+
+
 
   //Move the element to the right using the right arrow key
-  const keyboard = await page.keyboard;
-  await keyboard.press('ArrowRight');
-  await keyboard.press('ArrowRight');
-  await keyboard.press('ArrowRight');
-  await keyboard.press('ArrowRight');
-  const text = await page.locator("(//div[@class='card'])[9]/table/tbody/tr/td/span").textContent();
-  console.log(text);
+  // const keyboard = await page.keyboard;
+  // await keyboard.press('ArrowRight');
+  // await keyboard.press('ArrowRight');
+  // await keyboard.press('ArrowRight');
+  // await keyboard.press('ArrowRight');
+  // const text = await page.locator("(//div[@class='card'])[9]/table/tbody/tr/td/span").textContent();
+  // console.log(text);
 
 const ReturnToDashboard = await page.locator("//div[@class='layout-topbar']/a[1]").click();
 });
@@ -610,32 +656,68 @@ Then('User Downloads File from the page', async () => {
   console.log(path);
   const fileName = download[0].suggestedFilename();
   //await download[0].saveAs(fileName);
-  await download[0].saveAs('../reports/Downloads/TestLeaf Logo.png');
+  await download[0].saveAs('../reports/Downloads/TestLeafLogo.png');
   const ReturnToDashboard = await page.locator("//div[@class='layout-topbar']/a[1]").click();
 
 });
 
 Then('User Handling Nested Frame', async () => {
-  const Browser = await page.locator("//i[@class='pi pi-globe layout-menuitem-icon']").click();
-  const FrameButton = await page.locator("//li[@id='menuform:m_frame']").click();
-  const AllFrames = page.frames();
-  console.log("No Of Frames are " + AllFrames.length);//return no of frames in page
-  const frame1 = await page.frameLocator("iframe[src='default.xhtml']")
+  const List=await page.locator("//i[@class='pi pi-align-left layout-menuitem-icon']").click();
+  const ListMenu=await page.locator("//i[@class='pi pi-fw pi-list layout-menuitem-icon']").click();
+    const Pick_Listt = await page.$("//h5[text()='Pick List']");
 
-  // Click on the button inside the frame
-  await frame1.locator("(//button[@id='Click'])[1]").click();
-  console.log("button clicked");
-  // const frame2= await frame1.frameLocator("iframe[src='nested.xhtml']");
-  // console.log("Enterd into frame 2");
-  // const button=await frame2.locator("//button[text()='Count Frames']");
+  const scroll=await Pick_Listt.scrollIntoViewIfNeeded();
 
-  const frame3 = await page.frameLocator("iframe[src='page.xhtml']");
-  console.log("Enterd into frame 3");
-  const frame4 = await frame3.frameLocator("iframe[src='framebutton.xhtml']")
-  console.log("Enterd into frame 4");
+  const PickList=await page.locator("//ul[contains(@class,'ui-widget-content ui-picklist-list ui-picklist-source ui-corner-bottom ui-sortable')]");
+  const hasVerticalScrollbar = await PickList.evaluate(() => {
+        const { scrollHeight, clientHeight } = document.documentElement;
+        return scrollHeight > clientHeight;
+    })
+    if(hasVerticalScrollbar)
+    {
+    console.log("ScrollBar is Present");
+    }
+    else
+    {
+      console.log("ScrollBar is not  Present");
+    }
 
 
-  await frame4.locator("#Click").click();
+
+
+  //const Browser = await page.locator("//i[@class='pi pi-globe layout-menuitem-icon']").click();
+  //const FrameButton = await page.locator("//li[@id='menuform:m_frame']").click();
+//   const hasVerticalScrollbar = await page.evaluate(() => {
+//     const { scrollHeight, clientHeight } = document.documentElement;
+//     return scrollHeight > clientHeight;
+// })
+// if(!hasVerticalScrollbar)
+// {
+// console.log("ScrollBar is Present");
+// }
+// else
+// {
+//   console.log("ScrollBar is not  Present");
+// }
+//expect(hasVerticalScrollbar).to.be.true;
+  // const AllFrames = page.frames();
+  // console.log("No Of Frames are " + AllFrames.length);//return no of frames in page
+  // const frame1 = await page.frameLocator("iframe[src='default.xhtml']")
+
+  // // Click on the button inside the frame
+  // await frame1.locator("(//button[@id='Click'])[1]").click();
+  // console.log("button clicked");
+  // // const frame2= await frame1.frameLocator("iframe[src='nested.xhtml']");
+  // // console.log("Enterd into frame 2");
+  // // const button=await frame2.locator("//button[text()='Count Frames']");
+
+  // const frame3 = await page.frameLocator("iframe[src='page.xhtml']");
+  // console.log("Enterd into frame 3");
+  // const frame4 = await frame3.frameLocator("iframe[src='framebutton.xhtml']")
+  // console.log("Enterd into frame 4");
+
+
+  // await frame4.locator("#Click").click();
 
 
   const ReturnToDashboard = await page.locator("//div[@class='layout-topbar']/a[1]").click();

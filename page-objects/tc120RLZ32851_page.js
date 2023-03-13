@@ -1,8 +1,25 @@
 const playwright = require('playwright')
+const checkDisabled="//input[@id='j_idt88:j_idt93']";
+const ApppendCountry="//input[@id='j_idt88:j_idt91']";
+const TestLeafUserName="//input[@id='j_idt88:name']";
+const ClearTxtTestLeaf="//input[@id='j_idt88:j_idt95']";
+const Naame1="//input[@id='j_idt106:auto-complete_input']";
+const Naame2="//input[@id='j_idt106:auto-complete_input']";
+const Naame3="//input[@id='j_idt106:auto-complete_input']";
+const Slider_Value="//input[@id='j_idt106:slider']";
+const Element="//i[@class='pi pi-server layout-menuitem-icon']";
+const TextBox="(//i[@class='pi pi-fw pi-check-square layout-menuitem-icon'])[1]";
+const HyperLinkIcon="//i[@class='pi pi-fw pi-link layout-menuitem-icon']";
+
 
 class SaavasPage {
+  
   async LETS_CODE_MULTIWINDOW() {
     return await page.goto(global.LETS_CODE_WINDOW);
+  }
+
+  async Actitime_BaseUrl() {
+    return await page.goto(global.W3SchoolsHorizontalNavbar);
   }
   async IRCTC_BaseUrl() {
     return await page.goto(global.IRCTC_URL);
@@ -22,11 +39,11 @@ class SaavasPage {
   }
 async TestLeafEnterUserName(Username)
 {
-  return await page.locator("//input[@id='j_idt88:name']").fill(Username);
+  return await page.locator(TestLeafUserName).fill(Username);
 }
 async TestLeafAppendCountryName(AppendCountry)
 {
-  const textbox = await page.$("//input[@id='j_idt88:j_idt91']");
+  const textbox = await page.$(ApppendCountry);
 
 // Get the current value of the textbox
 const currentValue = await textbox.inputValue();
@@ -40,31 +57,46 @@ const newValue = currentValue + AppendCountry;
 return await textbox.fill(currentValue + AppendCountry);
   //return await page.locator("//input[@id='j_idt88:name']").fill(AppendCountry);
 }
+async TestLeafElementIcon () {
+  return await page.locator(Element).click();
+}
+async TestLeafTestBoxIcon() {
+  return await page.locator(TextBox).click();
+}
+
+async TestLeafHyperLinkIcon() {
+  return await page.locator(HyperLinkIcon).click();
+}
+
+
+async TestLeafHyperLinkIcon() {
+  return await page.locator(HyperLinkIcon).click();
+}
 async TestLeafCheckDisabled()
 {
-  const btn=await page.$("//input[@id='j_idt88:j_idt93']");
+  const btn=await page.$(checkDisabled);
   const btnn= await btn.isDisabled();
   return expect (btnn).to.be.true;
 }
 async TestLeafClearText()
 {
-  await page.locator("//input[@id='j_idt88:j_idt95']").clear();
+  await page.locator(ClearTxtTestLeaf).clear();
 }
 async SliderValue(SliderValue)
 {
-return await page.locator("//input[@id='j_idt106:slider']").fill(SliderValue);
+return await page.locator(Slider_Value).fill(SliderValue);
 }
   async EnterSaavaasUserName(UserName) {
     return await page.locator('[id="username"]').fill(UserName);
   }
   async EnterName1(Name1) {
-    return await page.locator("//input[@id='j_idt106:auto-complete_input']").fill(Name1);
+    return await page.locator(Naame1).fill(Name1);
   }
   async EnterName2(Name2) {
-    return await page.locator("//input[@id='j_idt106:auto-complete_input']").fill(Name2);
+    return await page.locator(Naame2).fill(Name2);
   }
   async EnterName3(Name3) {
-    return await page.locator("//input[@id='j_idt106:auto-complete_input']").fill(Name3);
+    return await page.locator(Naame3).fill(Name3);
   }
   
   async Password(_password) {
